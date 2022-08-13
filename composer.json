@@ -1,0 +1,20 @@
+{
+    "name": "ntcdev/websocket",
+    "keywords": ["Websocket", "PHP", "Laravel"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NTC\\Websocket\\": "src/psr4"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thach Canh Nhat",
+            "email": "contact.canhnhat@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^9.24",
+        "php": "^8.1"
+    }
+}
