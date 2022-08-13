@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "NTC\\Websocket\\": "src/psr4"
+            "NTC\\WS\\": "src/psr4"
         }
     },
     "authors": [
