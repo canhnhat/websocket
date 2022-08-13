@@ -22,7 +22,7 @@ class Server
      * @param string $host
      * @param string $port
      */
-    public function __construct(string $host, int $port)
+    public function __construct(string $host, int $port, private readonly string $appKey)
     {
         $this->initWebsocket($host, $port);
     }
@@ -75,8 +75,8 @@ class Server
 
         if (16 !== strlen(base64_decode($secWebSocketKey))
             || 0 === preg_match($patten, $secWebSocketKey)
-            || !($apiKey = $request->get['apiKey'] ?? null)
-            || $apiKey !== 'abcXyz'
+            || !($apiKey = $request->server['request_uri'] ?? null)
+            || $apiKey !== "/app/{$this->appKey}"
         ) {
             $response->end();
             return false;
